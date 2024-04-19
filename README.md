@@ -10,7 +10,7 @@ First, clone the BC TLS-IM into some subdirectory of your project (e.g., into `s
 
 Add the following BC directories as source sets, e.g., (for Gradle):
 
-```
+```java
 sourceSets.main {
     java {
         srcDirs 'src/main/java',
@@ -30,7 +30,7 @@ sourceSets.main {
 
 Second, clone this repository, e.g., into `src/tls-injection-smartcard`. Then add the following directory to srcDirs:
 
-```
+```java
                 'src/tls-injection-smartcard/src/main/java'
 ```
 
@@ -40,7 +40,7 @@ Just create an instance of `InjectableSmartCardRSA` by passing the sign() functi
 
 > The sign() function has the following declaration:
 >
-> ```
+> ```java
 > public interface SmartCardSignFunction {
 >     byte[] sign(byte[] message) throws Exception;
 > }
@@ -50,7 +50,7 @@ Then add that instance to an instance of `InjectableAlgorithms`.
 
 Finally, `push()` the injectable algorithms into the TLS `InjectionPoint`.
 
-```
+```java
 import org.bouncycastle.tls.injection.InjectionPoint;
 import lv.lumii.pqc.InjectableSmartCardRSA;
 
