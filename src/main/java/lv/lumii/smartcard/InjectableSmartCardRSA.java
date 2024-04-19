@@ -1,4 +1,4 @@
-package lv.lumii.pqc;
+package lv.lumii.smartcard;
 
 import lv.lumii.qrng.InjectablePQC;
 import org.bouncycastle.asn1.ASN1BitString;
