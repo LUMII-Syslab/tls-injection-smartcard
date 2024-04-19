@@ -1,5 +1,7 @@
 # Smartcard-based client authentication for the BouncyCastle TLS Injection Mechanism (TLS-IM)
 
+*by Sergejs Kozlovičs, 2024*
+
 This repository complements our BouncyCastle TLS Injection Mechanism with the ability to use external smartcard-based client authentication. The client has to implement the `sign()` function, which should contact the smartcard (or some other external devices) to sign the requested data. The data will be part of the TLS Server Hello message, which needs to be signed by the client to verify its identity at the server side.
 
 ## Before Use
