@@ -1,6 +1,5 @@
 package lv.lumii.smartcard;
 
-import lv.lumii.qrng.InjectablePQC;
 import org.bouncycastle.asn1.ASN1BitString;
 import org.bouncycastle.asn1.ASN1Integer;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
@@ -306,7 +305,6 @@ public class InjectableSmartCardRSA
                                         byte[] b = generated.getEncoded();
 
                                         System.out.println("generated pubkey encoding1:");*/
-                                System.out.println(InjectablePQC.byteArrayToString(b, " "));
                                 return b;
                             } catch (Exception e)
                             {
