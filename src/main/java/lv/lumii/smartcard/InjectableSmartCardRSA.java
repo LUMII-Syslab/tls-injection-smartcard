@@ -154,8 +154,17 @@ public class InjectableSmartCardRSA
         }
 
 
-        ASN1OctetString octetString = ASN1OctetString.getInstance(privateKey);
-        ASN1Sequence seq = ASN1Sequence.getInstance(octetString.getOctets());
+        ASN1Sequence seq;
+        try
+        {
+            // sometimes the private key is encapsulated into an ASN1 octet string...
+            ASN1OctetString octetString = ASN1OctetString.getInstance(privateKey);
+            seq = ASN1Sequence.getInstance(octetString.getOctets());
+        }
+        catch(Exception e)
+        {
+            seq = ASN1Sequence.getInstance(privateKey);
+        }
         ASN1Integer modulus = (ASN1Integer) seq.getObjectAt(1).toASN1Primitive();
         ASN1Integer privateExponent = (ASN1Integer) seq.getObjectAt(3).toASN1Primitive();
 
